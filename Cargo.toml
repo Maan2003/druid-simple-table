@@ -1,0 +1,8 @@
+[package]
+name = "druid_simple_table"
+version = "0.1.0"
+authors = ["Maan2003 <manmeetmann2003@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+druid = { path = "../druid/druid", features = ["im"] }
