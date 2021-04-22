@@ -5,4 +5,4 @@ authors = ["Maan2003 <manmeetmann2003@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-druid = { git = "https://github.com/Maan2003/druid", features = ["im"] }
+druid = { git = "https://github.com/linebender/druid", features = ["im"] }

@@ -4,6 +4,7 @@ use std::cmp::Ordering;
 
 pub use contraint_size::{SizeConstraint, WidgetExt};
 
+use druid::widget::SizedBox;
 use druid::{im::Vector, kurbo::Line, widget::prelude::*, WidgetPod};
 
 type DynWidget<T> = WidgetPod<T, Box<dyn Widget<T>>>;
@@ -31,13 +32,13 @@ impl<T> Table<T> {
 
     pub fn col<W: Widget<T> + 'static>(
         mut self,
-        header: impl Widget<()> + 'static,
+        // header: impl Widget<()> + 'static,
         w: impl Fn() -> W + 'static,
     ) -> Self {
         self.cols.push((
             Box::new(move || WidgetPod::new(Box::new(w()))),
             0.0,
-            WidgetPod::new(Box::new(header)),
+            WidgetPod::new(Box::new(SizedBox::empty())),
         ));
         self
     }
